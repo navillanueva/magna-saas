@@ -1,0 +1,30 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URI")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "./client"
+  engineType    = "binary"
+  binaryTargets = ["native"]
+}
+
+generator typegraphql {
+  provider        = "typegraphql-prisma"
+  output          = "../common/graphql/types"
+  emitOnly        = ["models", "inputs"]
+  useSimpleInputs = true
+}
+
+model Sample {
+  id   String @id @default(uuid())
+  name String
+}
+
+model Allocation {
+  id        String @id @default(uuid())
+  amount    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

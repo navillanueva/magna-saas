@@ -1,0 +1,10 @@
+**/node_modules
+**/coverage
+**/dist
+**/build
+.yarn
+eslint-reports
+
+# generated artifacts
+**/.next
+**/.postgres
