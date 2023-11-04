@@ -28,6 +28,7 @@
     "e-prim": "^1.6.0",
     "graphql": "^16.6.0",
     "graphql-fields": "^2.0.3",
+    "graphql-scalars": "^1.22.4",
     "graphql-yoga": "^4.0.4",
     "next": "^13.1.6",
     "next-auth": "^4.19.2",
