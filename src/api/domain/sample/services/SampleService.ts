@@ -1,3 +1,4 @@
+import { Sample } from '@/common/graphql/types';
 import ExecutionContextManager from '@/db/context/ExecutionContextManager';
 
 class SampleService {
@@ -6,9 +7,9 @@ class SampleService {
     return ctx.prisma.sample.findFirstOrThrow({});
   }
 
-  getSampleById(id: string) {
+  getSampleById(id: string): Promise<Sample> {
     const ctx = ExecutionContextManager.createExecutionContext();
-    return ctx.prisma.sample.findUnique({
+    return ctx.prisma.sample.findUniqueOrThrow({
       where: { id },
     });
   }

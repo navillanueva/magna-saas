@@ -9,7 +9,7 @@ export default class SampleResolver {
     return SampleService.getFirstSample();
   }
 
-  @Query(() => Sample, { nullable: false })
+  @Query(() => Sample, { nullable: true })
   async sampleById(@Arg('id') id: string): Promise<Sample> {
     return SampleService.getSampleById(id);
   }
