@@ -6,7 +6,7 @@ class SampleService {
     return ctx.prisma.sample.findFirstOrThrow({});
   }
 
-  getSampleById(id) {
+  getSampleById(id: string) {
     const ctx = ExecutionContextManager.createExecutionContext();
     return ctx.prisma.sample.findUnique({
       where: { id },
